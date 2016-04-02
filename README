@@ -22,3 +22,9 @@ Uninstalling
 
 wget -q --no-check-certificate -O - \
 https://raw.githubusercontent.com/ssinyagin/wireless_watchdog/master/uninstall_wireless_watchdog.sh | sh 
+
+
+
+Author
+------
+Copyright (c) 2016 Stanislav Sinyagin <ssinyagin@k-open.com>
