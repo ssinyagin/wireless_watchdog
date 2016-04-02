@@ -9,6 +9,6 @@ service.
 Installation
 ------------
 
-wget -q -O - \
+wget -q --no-check-certificate -O - \
 https://raw.githubusercontent.com/ssinyagin/wireless_watchdog/master/install_wireless_watchdog.sh | sh 
 
