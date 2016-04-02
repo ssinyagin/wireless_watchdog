@@ -10,5 +10,15 @@ cat >/etc/cron.d/wireless_watchdog <<'EOT'
 */2 * * * * root /usr/local/sbin/wireless_watchdog
 EOT
 
+cat >/etc/logrotate.d/wireless_watchdog <<'EOT'
+/var/log/wireless_watchdog {
+  rotate 6
+  monthly
+  compress
+  missingok
+  notifempty
+}
+EOT
+
 echo Installed wireless_watchdog
 

@@ -6,6 +6,10 @@ connection stops working. This is usually needed in wireless networks if
 the WLAN or 3G client needs to re-connect in order to continue the
 service.
 
+The default cronjob launches the watchdog script every 2 minutes, and it
+pings 8.8.8.8 with 10 packets. if none of them were replied, the default
+NIC is brought down and then up again.
+
 Installation
 ------------
 

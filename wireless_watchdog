@@ -1,6 +1,7 @@
 #!/bin/sh
 
 PING_COUNT=10
+LOGFILE=/var/log/wireless_watchdog
 
 . /usr/local/etc/wireless_watchdog
 
@@ -13,9 +14,11 @@ fi
 if ! ping -c ${PING_COUNT} -q 8.8.8.8 >/dev/null ; then
     logger -p user.notice -t wireless_watchdog \
            Internet is unreachable, restarting $DEV
-    /sbin/ifdown $DEV
+    date >>$LOGFILE
+    echo restarting $DEV >>$LOGFILE
+    /sbin/ifdown $DEV >>$LOGFILE 2>&1
     sleep 5
-    /sbin/ifup $DEV
+    /sbin/ifup $DEV >>$LOGFILE 2>&1
 fi
 
 
