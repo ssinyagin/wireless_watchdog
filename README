@@ -12,3 +12,9 @@ Installation
 wget -q --no-check-certificate -O - \
 https://raw.githubusercontent.com/ssinyagin/wireless_watchdog/master/install_wireless_watchdog.sh | sh 
 
+
+Uninstalling
+------------
+
+wget -q --no-check-certificate -O - \
+https://raw.githubusercontent.com/ssinyagin/wireless_watchdog/master/uninstall_wireless_watchdog.sh | sh 
