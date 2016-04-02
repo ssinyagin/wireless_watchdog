@@ -1,0 +1,23 @@
+#!/bin/sh
+
+PING_COUNT=10
+
+. /usr/local/etc/wireless_watchdog
+
+if [ x"$DEV" = x ]; then
+    echo missing DEV variable 1>&2
+    exit 1
+fi
+
+
+if ! ping -c ${PING_COUNT} -q 8.8.8.8 >/dev/null ; then
+    logger -p user.notice -t wireless_watchdog \
+           Internet is unreachable, restarting $DEV
+    /sbin/ifdown $DEV
+    sleep 5
+    /sbin/ifup $DEV
+fi
+
+
+  
+  

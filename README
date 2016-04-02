@@ -1,0 +1,18 @@
+Wireless network watchdog
+=========================
+
+This is a simple script that resets a network interface if the Internet
+connection stops working. This is usually needed in wireless networks if
+the WLAN or 3G client needs to re-connect in order to continue the
+service.
+
+Installation
+------------
+
+/sbin/ip route | egrep '^default ' | \
+ sed -e 's,.* dev \([a-zA-Z0-9]*\).*,DEV=\1,' \
+ >/usr/local/etc/wireless_watchdog
+
+wget -O /usr/local/sbin/wireless_watchdog https://[github link]
+
+
