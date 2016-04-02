@@ -9,10 +9,6 @@ service.
 Installation
 ------------
 
-/sbin/ip route | egrep '^default ' | \
- sed -e 's,.* dev \([a-zA-Z0-9]*\).*,DEV=\1,' \
- >/usr/local/etc/wireless_watchdog
-
-wget -O /usr/local/sbin/wireless_watchdog https://[github link]
-
+wget -q -O - \
+https://raw.githubusercontent.com/ssinyagin/wireless_watchdog/master/install_wireless_watchdog.sh | sh 
 
